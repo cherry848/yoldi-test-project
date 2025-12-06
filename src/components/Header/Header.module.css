@@ -1,0 +1,62 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 29.5px 15px 20px;  
+    gap: 20px;
+    align-items: center;
+    border: 1px solid #E6E6E6;
+}
+
+.headerTitle {
+    width: 225px;
+    font-weight: 400;
+    font-size: 16px;
+    color: #000000;
+    line-height: 160%;
+}
+
+.userInfo {
+    display: flex;
+    gap: 20px;
+    margin-left: auto;
+}
+
+.name {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+    display: flex;
+    align-items: center;
+}
+
+.avatar {
+    background: #F3F3F3;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #E6E6E6;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-size: cover; */
+        /* чтобы картинка полностью покрывала блок */
+    /* background-position: center; */
+        /* чтобы центрировать картинку */
+    /* background-repeat: no-repeat; */
+        /* чтобы не дублировалась */
+}
+
+.button {
+    font-family: "Inter", sans-serif;
+    margin-left: auto;
+    border: 1px solid #D4D4D4;
+    border-radius: 5px;
+    padding: 7px 33px;
+    font-weight: 500;
+    font-size: 16px;
+    background: #FFFFFF;
+    text-align: center;
+}
