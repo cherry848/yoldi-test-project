@@ -2,11 +2,11 @@ import { Button } from "../Button/Button";
 import styles from "./Header.module.css";
 import type { IUserData } from "../Profile/Profile";
 
-interface HeaderProps {
+interface HeaderProp22 {
   user?: IUserData;
 }
 
-export const Header = ({ user }: HeaderProps) => {
+export const Header = ({ user }: HeaderProp22) => {
   return (
     <header className={styles["header"]}>
       <img src="/logo-wrapper.svg" alt="Yoldi logo" />

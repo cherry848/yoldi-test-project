@@ -107,9 +107,11 @@ export const Profile = () => {
   const deleteImage = (image: string) => {
     if (image === "/cover") {
       setUserData((prev) => ({ ...prev, cover: null }));
+      if (coverRef.current) coverRef.current.value = "";
     }
     if (image === "/image") {
       setUserData((prev) => ({ ...prev, image: null }));
+      if (imageRef.current) imageRef.current.value = "";
     }
   };
 
@@ -127,11 +129,6 @@ export const Profile = () => {
         className={cn(styles["profileHeader"], {
           [styles["profileHeaderImage"]]: userData.cover,
         })}
-        // onClick={
-        //   userData.cover
-        //     ? () => deleteImage("/image")
-        //     : () => openFileDialog(coverRef)
-        // }
         onClick={() => {
           console.log(userData);
           if (userData.cover) {
