@@ -23,6 +23,10 @@ const router = createBrowserRouter([
     path: "page/accounts-list",
     element: <AccountList />,
   },
+  {
+    path: "page/profile/:slug",
+    element: <Profile />,
+  },
 ]);
 
 createRoot(document.getElementById("root")!).render(

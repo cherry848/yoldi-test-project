@@ -1,4 +1,5 @@
 import axios from "axios";
+import { getToken } from "./tokenAuth";
 
 const authInstance = axios.create({
   baseURL: "https://frontend-test-api.yoldi.agency/api",
@@ -8,7 +9,7 @@ const authInstance = axios.create({
 authInstance.interceptors.request.use(
   (config) => {
     // Можно добавить токен, если есть
-    const token = localStorage.getItem("token");
+    const token = getToken();
     if (token) config.headers["X-API-Key"] = token;
 
     return config;

@@ -2,11 +2,32 @@ import { useEffect, useState } from "react";
 import { Header } from "../Header/Header";
 import styles from "./AccountList.module.css";
 import authInstance from "../helpers/authInstance";
+import { useNavigate } from "react-router";
+import type { IUserData } from "../Profile/Profile";
 
 interface IAcccountsList {
   name: string;
   email: string;
   slug: string;
+  description: string | null;
+  image: {
+    id: string;
+    url: string;
+    width: string;
+    height: string;
+  } | null;
+  cover: {
+    id: string;
+    url: string;
+    width: string;
+    height: string;
+  } | null;
+}
+
+interface IUserProfile {
+  name: string | null;
+  email: string | null;
+  slug: string | null;
   description: string | null;
   image: {
     id: string;
@@ -34,24 +55,61 @@ export const AccountList = () => {
     },
   ]);
 
+  const [profile, setProfile] = useState<IUserProfile>({
+    name: null,
+    email: null,
+    slug: null,
+    description: null,
+    image: null,
+    cover: null,
+  });
+
+  // const [enable, setEnable] = useState(true);
+
+  const navigate = useNavigate();
+
   useEffect(() => {
-    authInstance.get<IAcccountsList[]>("/user").then((res) => {
+    authInstance.get("/user").then((res) => {
       setAccounts(res.data);
     });
+
+    const getOwnerProfile = async () => {
+      const profile = await authInstance.get("/profile");
+      if (profile.status === 200) {
+        setProfile(profile.data);
+      }
+    };
+    getOwnerProfile();
   }, []);
+
+  const loadProfile = (slug: string) => {
+    navigate(`/page/profile/${slug}`);
+  };
 
   return (
     <div className={styles["wrapper"]}>
-      <Header></Header>
+      <Header
+        enable={profile.slug ? true : false}
+        user={profile as IUserData}
+      ></Header>
       <div className={styles["accountsWrapper"]}>
         <div className={styles["accountsList"]}>
           <span className={styles["accountsListTitle"]}>Список аккаунтов</span>
           {accounts.map((account) => {
             return (
-              <div className={styles["account"]}>
+              <div
+                onClick={() => {
+                  loadProfile(account.slug);
+                }}
+                key={account.slug}
+                className={styles["account"]}
+              >
                 <div className={styles["avatar"]}>
                   {account.image ? (
-                    <img src={account.image.url} />
+                    <img
+                      className={styles["avatarImg"]}
+                      src={account.image.url}
+                    />
                   ) : (
                     account.name.slice(0, 1)
                   )}

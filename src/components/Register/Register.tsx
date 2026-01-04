@@ -33,7 +33,7 @@ export const Register = () => {
     });
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     const newErrors = {
       name: !form.name,
       email: !form.email,
@@ -45,7 +45,8 @@ export const Register = () => {
     const allValid = Object.values(newErrors).every((val) => val === false);
 
     if (allValid) {
-      authInstance.post(`/auth/sign-up`, form);
+      const response = await authInstance.post(`/auth/sign-up`, form);
+      if (response.status === 201) navigate("/page/profile");
     }
   };
 
@@ -53,7 +54,7 @@ export const Register = () => {
 
   return (
     <div className={styles["wrapper"]}>
-      <Header></Header>
+      <Header enable={false}></Header>
       <div className={styles["content"]}>
         <div className={styles["auth-form"]}>
           <span>

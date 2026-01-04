@@ -1,0 +1,172 @@
+.wrapper {
+    background: #FFFFFF;
+    border: 1px solid #E6E6E6;
+    border-radius: 5px;
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 30px;
+    transition-duration: 0.3s;
+}
+
+.editProfile {
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 140%;
+    width: 540px;
+}
+
+.editProfileWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.nameForm {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.addressForm {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.address {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 160%;
+    color: #838383;
+}
+
+.addressExampleWrapper {
+    display: flex;
+}
+
+.addressExample {
+    background: #F3F3F3;
+    padding: 12px 20px;
+    color: #838383;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border: 1px solid #D4D4D4;
+    font-weight: 400;
+    font-size: 16px;
+    color: #838383;
+}
+
+.addressInput {
+    margin-left: auto;
+    flex: 1;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 12px 20px;
+    font-weight: 400;
+    font-size: 16px;
+    border: 1px solid #D4D4D4;
+    border-left: none;
+    transition-duration: 0.3s;
+}
+
+.addressInput:focus {
+    outline: none;
+    border: 1px solid #838383;
+    border-left: none;
+}
+
+.descriptionForm {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.description {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 160%;
+    color: #838383;
+}
+
+.name {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 160%;
+    color: #838383;
+}
+
+.nameInput {
+    padding: 12px 20px;
+    font-weight: 400;
+    font-size: 16px;
+    border: 1px solid #D4D4D4;
+    border-radius: 5px;
+    transition-duration: 0.3s;
+}
+
+.nameInput:focus {
+    border: 1px solid #838383;
+    outline: none;
+}
+
+.descriptionInput {
+    font-family: "Inter", sans-serif;
+    height: 154px;
+    padding: 12px 20px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+    border: 1px solid #D4D4D4;
+    border-radius: 5px;
+    transition-duration: 0.3s;
+    resize: none;
+    overflow: hidden;
+}
+
+.descriptionInput:focus {
+    border: 1px solid #838383;
+    outline: none;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.button {
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 160%;
+    padding: 12px 0;
+    flex: 1;
+    background: #FFFFFF;
+    border: 1px solid #838383;
+    border-radius: 5px;
+    transition-duration: 0.3s;
+}
+
+.button:hover {
+    background: #000000;
+    border: none;
+    color: #FFFFFF;
+}
+
+@media (height: 980px) {
+    .wrapper {
+        top: 0%;
+        left: 0%;
+        transform: translate(0, 0);
+        inset: 0;
+        top: 84px;
+    }
+
+}
+
+

@@ -53,7 +53,7 @@ export const Login = () => {
 
   return (
     <div className={styles["wrapper"]}>
-      <Header />
+      <Header enable={false} />
       <div className={styles["content"]}>
         <div className={styles["auth-form"]}>
           <span>Вход в Yoldi Agency</span>

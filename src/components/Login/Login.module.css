@@ -87,5 +87,20 @@
 }
 
 
+@media (width: 375px) {
+    .content {
+        background: #FFFFFF;
+        align-items: flex-start;
+    }
+
+    .auth-form {
+        border: none;
+    }
+
+    .auth-form span {
+        width: 314px;
+    }
+}
+
 
 
